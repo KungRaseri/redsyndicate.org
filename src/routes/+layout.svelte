@@ -4,6 +4,7 @@
 	import '../app.postcss';
 
 	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
+	
 </script>
 
 <AppShell>
