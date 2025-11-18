@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import '@skeletonlabs/skeleton';
-@import '@skeletonlabs/skeleton/themes/nouveau';
+@import '@skeletonlabs/skeleton/themes/crimson';
 
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
