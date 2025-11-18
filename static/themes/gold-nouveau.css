@@ -1,0 +1,65 @@
+/* Gold Nouveau Theme */
+@theme {
+	/* Primary - Rich Gold */
+	--color-primary-50: 254 252 232;
+	--color-primary-100: 254 249 195;
+	--color-primary-200: 254 240 138;
+	--color-primary-300: 253 224 71;
+	--color-primary-400: 250 204 21;
+	--color-primary-500: 234 179 8;
+	--color-primary-600: 202 138 4;
+	--color-primary-700: 161 98 7;
+	--color-primary-800: 133 77 14;
+	--color-primary-900: 113 63 18;
+	--color-primary-950: 66 32 6;
+
+	/* Secondary - Deep Purple */
+	--color-secondary-50: 250 245 255;
+	--color-secondary-100: 243 232 255;
+	--color-secondary-200: 233 213 255;
+	--color-secondary-300: 216 180 254;
+	--color-secondary-400: 192 132 252;
+	--color-secondary-500: 168 85 247;
+	--color-secondary-600: 147 51 234;
+	--color-secondary-700: 126 34 206;
+	--color-secondary-800: 107 33 168;
+	--color-secondary-900: 88 28 135;
+	--color-secondary-950: 59 7 100;
+
+	/* Tertiary - Rose Gold */
+	--color-tertiary-50: 255 241 242;
+	--color-tertiary-100: 255 228 230;
+	--color-tertiary-200: 254 205 211;
+	--color-tertiary-300: 253 164 175;
+	--color-tertiary-400: 251 113 133;
+	--color-tertiary-500: 244 63 94;
+	--color-tertiary-600: 225 29 72;
+	--color-tertiary-700: 190 18 60;
+	--color-tertiary-800: 159 18 57;
+	--color-tertiary-900: 136 19 55;
+	--color-tertiary-950: 76 5 25;
+
+	/* Surface - Warm Grays */
+	--color-surface-50: 250 250 249;
+	--color-surface-100: 245 245 244;
+	--color-surface-200: 231 229 228;
+	--color-surface-300: 214 211 209;
+	--color-surface-400: 168 162 158;
+	--color-surface-500: 120 113 108;
+	--color-surface-600: 87 83 78;
+	--color-surface-700: 68 64 60;
+	--color-surface-800: 41 37 36;
+	--color-surface-900: 28 25 23;
+	--color-surface-950: 12 10 9;
+
+	/* Semantic Colors */
+	--color-success-500: 34 197 94;
+	--color-warning-500: 234 179 8;
+	--color-error-500: 239 68 68;
+
+	/* Body colors */
+	--body-background-color: 255 255 255;
+	--body-background-color-dark: 28 25 23;
+	--base-font-color: 41 37 36;
+	--base-font-color-dark: 250 250 249;
+}

@@ -1,18 +1,54 @@
-<script>
-	import '@skeletonlabs/skeleton/themes/theme-gold-nouveau.css';
-	import '@skeletonlabs/skeleton/styles/all.css';
-	import '../app.postcss';
+<script lang="ts">
+	import { AppBar } from '@skeletonlabs/skeleton-svelte';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import LightSwitch from '$lib/components/LightSwitch.svelte';
+	import '../app.css';
 
-	import { AppBar, AppShell } from '@skeletonlabs/skeleton';
-	
+	import type { Snippet } from 'svelte';
+
+	interface Props {
+		children: Snippet;
+	}
+
+	let { children }: Props = $props();
+
+	// Initialize dark mode from localStorage
+	onMount(() => {
+		if (browser) {
+			const mode = localStorage.getItem('mode') || 'light';
+			document.documentElement.setAttribute('data-mode', mode);
+		}
+	});
 </script>
 
-<AppShell>
-	<svelte:fragment slot="header">
-		<AppBar>
-			<svelte:fragment slot="lead">Red Syndicate</svelte:fragment>
-			<a href="/">Home</a>
-		</AppBar>
-	</svelte:fragment>
-	<slot />
-</AppShell>
+<div class="flex flex-col h-full">
+	<AppBar>
+		<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
+			<AppBar.Lead>
+				<a href="/" class="text-xl font-bold">Red Syndicate</a>
+			</AppBar.Lead>
+			<AppBar.Headline>
+				<nav class="flex gap-4">
+					<a href="/" class="preset-tonal-surface px-4 py-2 rounded-lg hover:preset-filled-primary transition-all">
+						Home
+					</a>
+				</nav>
+			</AppBar.Headline>
+			<AppBar.Trail>
+				<LightSwitch />
+			</AppBar.Trail>
+		</AppBar.Toolbar>
+	</AppBar>
+
+	<main class="flex-1 overflow-y-auto">
+		{@render children()}
+	</main>
+
+	<footer class="w-full bg-surface-100 dark:bg-surface-900 border-t border-surface-300 dark:border-surface-700 p-4">
+		<div class="container mx-auto text-center text-sm text-surface-700 dark:text-surface-300">
+			<p>&copy; {new Date().getFullYear()} Red Syndicate. All rights reserved.</p>
+		</div>
+	</footer>
+</div>
+

@@ -1,17 +1,18 @@
-# GitHub Copilot Instructions for redsyndicat.org
+# GitHub Copilot Instructions for redsyndicate.org
 
 ## Project Overview
-This is a personal portfolio and content website built with:
-- **SvelteKit** - Meta-framework
-- **Skeleton v4** - Design system and component library
-- **Tailwind CSS v4** - Utility-first CSS framework
-- **TypeScript** - Type-safe development
+This is Red Syndicate's professional portfolio and services website built with:
+- **SvelteKit 2** - Meta-framework for building web applications
+- **Svelte 5** - Reactive UI framework with runes mode
+- **Skeleton v4** - Design system and component library (latest version)
+- **Tailwind CSS v4** - Utility-first CSS framework (latest version)
+- **TypeScript 5.7** - Type-safe development
 
 **Key Dependencies:**
 - `@skeletonlabs/skeleton` (^4.2.2) - Core CSS variables and theme system
-- `@skeletonlabs/skeleton-svelte` (^4.2.2) - Svelte components
-- `lucide-svelte` (^0.554.0) - Icon library
-- `svelte` (^5.43.2) - Svelte 5 with runes mode
+- `@skeletonlabs/skeleton-svelte` (^4.2.2) - Svelte component library
+- `@tailwindcss/vite` (^4.0.0) - Tailwind v4 Vite plugin
+- `svelte` (^5.2.7) - Svelte 5 with runes mode enabled
 - `tailwindcss` (^4.0.0) - Tailwind CSS v4
 
 ## Core Principles
@@ -28,13 +29,13 @@ This is a personal portfolio and content website built with:
 
 ### 3. Component Composition
 - Break complex UIs into smaller, reusable components
-- Use Svelte's composition patterns (slots, snippets)
+- Use Svelte's composition patterns (snippets, {@render})
 - Keep components focused and single-purpose
 
 ## Skeleton v4 Design System
 
 ### CSS Import Structure
-The project uses a specific import order in `app.css`:
+The project uses a specific import order in `app.postcss`:
 
 ```css
 @import 'tailwindcss';
@@ -49,7 +50,6 @@ The project uses a specific import order in `app.css`:
 
 html, body {
   height: 100%;
-  font-family: 'Titillium Web', sans-serif;
   background-color: var(--body-background-color);
   color: var(--base-font-color);
 }
@@ -156,12 +156,6 @@ This project uses a **hybrid theme system** supporting both Skeleton preset them
 - `crimson` - Bold reds with strong contrast
 - `vintage` - Retro styling with warm tones
 - `terminus` - Dark terminal-inspired theme
-
-*Custom Themes (from /static/themes/):*
-- `gold-nouveau` - Elegant gold and dark tones with luxurious feel (default)
-- `cyber-night` - Neon blues and cyans with dark backgrounds for futuristic look
-- `forest-sage` - Natural greens and earthy tones for calming experience
-- `crimson-steel` - Bold reds with cool grays for powerful aesthetic
 
 **Security Measures:**
 ⚠️ **Critical**: To prevent CSS injection attacks, the theme system implements:
@@ -736,6 +730,31 @@ Always verify:
 4. ARIA labels are present
 5. No console errors or warnings
 
+## Icons
+
+**This project uses Unicode emojis instead of icon libraries** for better compatibility with Svelte 5 runes mode:
+
+```svelte
+<script lang="ts">
+	const services = [
+		{ name: 'Development', icon: '💻' },
+		{ name: 'Testing', icon: '✅' },
+		{ name: 'Consulting', icon: '💡' }
+	];
+</script>
+
+<div>
+	{#each services as service}
+		<div class="flex items-center gap-2">
+			<span class="text-2xl">{service.icon}</span>
+			<span>{service.name}</span>
+		</div>
+	{/each}
+</div>
+```
+
+**Note:** Popular icon libraries like `lucide-svelte` are not yet compatible with Svelte 5 runes mode. Use Unicode emojis or create custom SVG components.
+
 ## Button with Icons
 
 **CRITICAL:** Buttons with icons MUST use `flex items-center gap-2` to properly align icons inline with text:
@@ -743,14 +762,14 @@ Always verify:
 ```svelte
 <!-- ✅ CORRECT: Icon inline with text -->
 <button class="btn preset-tonal flex items-center gap-2">
+  <span>📧</span>
   <span>Click Me</span>
-  <IconComponent class="size-5" />
 </button>
 
 <!-- ❌ INCORRECT: Icon will wrap to next line -->
 <button class="btn preset-tonal">
+  <span>📧</span>
   <span>Click Me</span>
-  <IconComponent class="size-5" />
 </button>
 ```
 

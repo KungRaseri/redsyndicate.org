@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/themes/nouveau';
+
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+
+/* Custom dark mode variant for manual control */
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+html, body {
+  height: 100%;
+  background-color: var(--body-background-color);
+  color: var(--base-font-color);
+}
+
+html[data-mode='dark'] body {
+  background-color: var(--body-background-color-dark);
+  color: var(--base-font-color-dark);
+}
