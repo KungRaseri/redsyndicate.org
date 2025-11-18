@@ -1,24 +1,32 @@
 <script lang="ts">
-	const services = [
+	import { CodeXml, Globe, CheckCircle, Lightbulb, Mail } from 'lucide-svelte';
+
+	import type { Component } from 'svelte';
+
+	const services: Array<{
+		name: string;
+		description: string;
+		icon: Component;
+	}> = [
 		{
 			name: 'Software Development',
 			description: 'Custom software solutions tailored to your needs',
-			icon: '💻'
+			icon: CodeXml
 		},
 		{
 			name: 'Website Development',
 			description: 'Modern, responsive websites built with the latest technologies',
-			icon: '🌐'
+			icon: Globe
 		},
 		{
 			name: 'Testing & QA',
 			description: 'Comprehensive testing to ensure quality and reliability',
-			icon: '✅'
+			icon: CheckCircle
 		},
 		{
 			name: 'Consulting',
 			description: 'Expert advice on technology strategy and implementation',
-			icon: '💡'
+			icon: Lightbulb
 		}
 	];
 </script>
@@ -40,7 +48,7 @@
 			{#each services as service}
 				<div class="card preset-tonal-surface p-6 space-y-2">
 					<div class="flex items-center gap-3">
-						<span class="text-4xl">{service.icon}</span>
+						<service.icon class="size-8 text-primary-500" />
 						<h3 class="text-xl font-semibold text-surface-900 dark:text-surface-100">
 							{service.name}
 						</h3>
@@ -61,9 +69,8 @@
 			Ready to bring your project to life? Contact us to discuss your requirements.
 		</p>
 		<button class="btn preset-filled-primary flex items-center gap-2">
-			<span>📧</span>
+			<Mail class="size-5" />
 			<span>Contact Us</span>
 		</button>
 	</section>
 </div>
-
