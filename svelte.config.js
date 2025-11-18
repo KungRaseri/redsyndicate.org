@@ -1,19 +1,15 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
-	// for more information about preprocessors
+	// Svelte 5 uses vitePreprocess by default
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter()
-	},
-
-	// Enable Svelte 5 runes mode
-	compilerOptions: {
-		runes: true
+		adapter: adapter({
+			runtime: 'nodejs22.x'
+		})
 	}
 };
 

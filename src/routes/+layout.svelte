@@ -23,14 +23,16 @@
 </script>
 
 <div class="flex flex-col h-full">
-	<AppBar>
-		<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
+	<AppBar class="bg-surface-50 dark:bg-surface-900 border-b border-surface-200 dark:border-surface-700">
+		<AppBar.Toolbar class="container mx-auto grid grid-cols-[auto_1fr_auto] gap-4 items-center p-4">
 			<AppBar.Lead>
-				<a href="/" class="text-xl font-bold text-primary-500">Red Syndicate</a>
+				<a href="/" class="text-xl font-bold text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+					Red Syndicate
+				</a>
 			</AppBar.Lead>
-			<AppBar.Headline>
+			<AppBar.Headline class="flex justify-center">
 				<nav class="flex gap-2">
-					<a href="/" class="preset-tonal px-4 py-2 rounded-token hover:preset-filled-primary transition-colors">
+					<a href="/" class="px-4 py-2 rounded-token text-surface-900 dark:text-surface-100 hover:preset-tonal transition-colors">
 						Home
 					</a>
 				</nav>
