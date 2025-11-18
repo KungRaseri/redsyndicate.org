@@ -5,6 +5,16 @@
 	<meta charset="utf-8" />
 	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 	<meta name="viewport" content="width=device-width" />
+	<title>Red Syndicate</title>
+
+	<!-- Initialize theme before page load to prevent flash -->
+	<script>
+		(function () {
+			const mode = localStorage.getItem('mode') || 'light';
+			document.documentElement.dataset.mode = mode;
+		})();
+	</script>
+
 	%sveltekit.head%
 </head>
 

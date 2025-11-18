@@ -26,11 +26,11 @@
 	<AppBar>
 		<AppBar.Toolbar class="grid-cols-[auto_1fr_auto]">
 			<AppBar.Lead>
-				<a href="/" class="text-xl font-bold">Red Syndicate</a>
+				<a href="/" class="text-xl font-bold text-primary-500">Red Syndicate</a>
 			</AppBar.Lead>
 			<AppBar.Headline>
-				<nav class="flex gap-4">
-					<a href="/" class="preset-tonal-surface px-4 py-2 rounded-lg hover:preset-filled-primary transition-all">
+				<nav class="flex gap-2">
+					<a href="/" class="preset-tonal px-4 py-2 rounded-token hover:preset-filled-primary transition-colors">
 						Home
 					</a>
 				</nav>

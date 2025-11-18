@@ -61,6 +61,7 @@
 			Ready to bring your project to life? Contact us to discuss your requirements.
 		</p>
 		<button class="btn preset-filled-primary flex items-center gap-2">
+			<span>📧</span>
 			<span>Contact Us</span>
 		</button>
 	</section>
