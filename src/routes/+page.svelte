@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CodeXml, Globe, CheckCircle, Lightbulb, Mail, Zap, Users, Award } from 'lucide-svelte';
+	import { CodeXml, Globe, CheckCircle, Lightbulb, Mail, Zap, Users, Award, MessageCircle } from 'lucide-svelte';
 
 	const services = [
 		{
@@ -134,12 +134,23 @@
 				</h2>
 				<p class="text-xl text-primary-50">
 					Let's discuss how we can help bring your vision to life. 
-					Get in touch for a free consultation.
+					Get in touch for a free consultation or join our community.
 				</p>
-				<button class="btn preset-filled bg-white text-primary-500 hover:bg-primary-50 btn-lg flex items-center gap-2 mx-auto">
-					<Mail class="size-5" />
-					<span>Contact Us Today</span>
-				</button>
+				<div class="flex flex-wrap gap-4 justify-center">
+					<button class="btn preset-filled bg-white text-primary-500 hover:bg-primary-50 btn-lg flex items-center gap-2">
+						<Mail class="size-5" />
+						<span>Contact Us Today</span>
+					</button>
+					<a 
+						href="https://discord.gg/bSSMwzv6Qc" 
+						target="_blank" 
+						rel="noopener noreferrer"
+						class="btn preset-outlined border-2 border-white text-white hover:bg-white hover:text-primary-500 btn-lg flex items-center gap-2"
+					>
+						<MessageCircle class="size-5" />
+						<span>Join Our Discord</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>
